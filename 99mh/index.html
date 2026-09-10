@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>99漫画-99漫画在线观看与漫画阅读指南</title>
+    <meta name="description" content="99漫画是一个专注于提供高清漫画资源与阅读体验的在线平台。在这里，您可以找到日漫、国漫、韩漫等各类热门漫画，享受流畅的在线观看服务。我们提供详细的漫画分类与阅读指南，助您快速发现心仪的作品。">
+    <meta name="keywords" content="99漫画,漫画在线观看,漫画阅读指南,日漫,国漫,韩漫,免费漫画,高清漫画">
+    <style>
+        /* ========== 全局基础样式 ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: #f5f7fa;
+            color: #2c3e50;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ========== 页眉区 ========== */
+        .site-header {
+            background-color: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #e74c3c;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #2c3e50;
+            font-weight: 400;
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 28px;
+        }
+
+        .main-nav a {
+            font-weight: 500;
+            color: #34495e;
+            transition: color 0.2s ease;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #e74c3c;
+            border-bottom-color: #e74c3c;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: #f1f3f5;
+            border-radius: 40px;
+            padding: 5px 5px 5px 15px;
+            border: 1px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .search-box:focus-within {
+            background: #fff;
+            border-color: #e74c3c;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            background: transparent;
+            font-size: 0.9rem;
+            width: 180px;
+            color: #333;
+        }
+
+        .search-box button {
+            background: #e74c3c;
+            border: none;
+            color: #fff;
+            border-radius: 40px;
+            padding: 6px 16px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .search-box button:hover {
+            background: #c0392b;
+        }
+
+        /* ========== 首屏 Hero 区 ========== */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: #fff;
+            padding: 70px 0 60px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #e74c3c;
+            color: #fff;
+            border: 2px solid #e74c3c;
+        }
+
+        .btn-primary:hover {
+            background: #c0392b;
+            border-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-3px);
+        }
+
+        /* ========== 核心分类卡片区 ========== */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 12px;
+            color: #2c3e50;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .category-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #ecf0f1;
+        }
+
+        .category-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+            border-color: #e74c3c;
+        }
+
+        .card-icon {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* ========== 热门作品展示区 ========== */
+        .featured-section {
+            background: #fff;
+            padding: 60px 0;
+        }
+
+        .manga-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .manga-item {
+            background: #f8f9fa;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .manga-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .manga-cover {
+            height: 180px;
+            background: linear-gradient(145deg, #dfe6e9, #b2bec3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        .manga-item:nth-child(1) .manga-cover { background: linear-gradient(145deg, #6c5ce7, #a29bfe); }
+        .manga-item:nth-child(2) .manga-cover { background: linear-gradient(145deg, #e17055, #fab1a0); }
+        .manga-item:nth-child(3) .manga-cover { background: linear-gradient(145deg, #00b894, #55efc4); }
+        .manga-item:nth-child(4) .manga-cover { background: linear-gradient(145deg, #0984e3, #74b9ff); }
+        .manga-item:nth-child(5) .manga-cover { background: linear-gradient(145deg, #e84393, #fd79a8); }
+        .manga-item:nth-child(6) .manga-cover { background: linear-gradient(145deg, #fdcb6e, #ffeaa7); }
+        .manga-item:nth-child(7) .manga-cover { background: linear-gradient(145deg, #636e72, #b2bec3); }
+        .manga-item:nth-child(8) .manga-cover { background: linear-gradient(145deg, #d63031, #ff7675); }
+
+        .manga-info {
+            padding: 15px;
+        }
+
+        .manga-info h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .manga-info .tag {
+            font-size: 0.8rem;
+            color: #e74c3c;
+            background: #fdecea;
+            padding: 2px 8px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .manga-info .status {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        /* ========== 阅读指南步骤区 ========== */
+        .guide-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .step-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+            border-left: 4px solid #e74c3c;
+        }
+
+        .step-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e74c3c;
+            opacity: 0.3;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+        }
+
+        .step-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .step-item p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* ========== 平台优势 ========== */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+
+        .advantage-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            text-align: center;
+            border: 1px solid #f1f3f5;
+        }
+
+        .advantage-box .icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .advantage-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .advantage-box p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* ========== 注意事项 ========== */
+        .notice-section {
+            background: #fff;
+            padding: 60px 0;
+        }
+
+        .notice-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .notice-list li {
+            background: #fef9e7;
+            border-left: 4px solid #f39c12;
+            padding: 14px 20px;
+            margin-bottom: 15px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.98rem;
+            color: #555;
+        }
+
+        .notice-list strong {
+            color: #2c3e50;
+        }
+
+        /* ========== FAQ 区 ========== */
+        .faq-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px 30px;
+            margin-bottom: 16px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.03);
+            border: 1px solid #ecf0f1;
+        }
+
+        .faq-item h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+
+        .faq-item p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* ========== 相关推荐主题 ========== */
+        .related-section {
+            padding: 50px 0;
+            background: #fff;
+        }
+
+        .related-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .related-tags a {
+            background: #f1f3f5;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #34495e;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .related-tags a:hover {
+            background: #e74c3c;
+            color: #fff;
+            border-color: #e74c3c;
+        }
+
+        /* ========== 页脚 ========== */
+        .site-footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand h3 {
+            color: #fff;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-links h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #e74c3c;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #34495e;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #95a5a6;
+        }
+
+        /* ========== 响应式 ========== */
+        @media (max-width: 992px) {
+            .header-inner {
+                flex-wrap: wrap;
+                height: auto;
+                padding: 15px 0;
+            }
+            .main-nav {
+                order: 3;
+                width: 100%;
+                margin-top: 10px;
+            }
+            .main-nav ul {
+                justify-content: center;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            .search-box {
+                order: 2;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .search-box input {
+                flex: 1;
+                width: auto;
+            }
+            .hero {
+                padding: 50px 0 40px;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section {
+                padding: 40px 0;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .manga-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+            .manga-cover {
+                height: 150px;
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 240px;
+                text-align: center;
+            }
+            .category-grid,
+            .advantage-grid {
+                grid-template-columns: 1fr;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            .faq-item {
+                padding: 18px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- ================= 页眉 ================= -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">99漫画<span>.com</span></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">日漫</a></li>
+                    <li><a href="#">国漫</a></li>
+                    <li><a href="#">韩漫</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">阅读指南</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索漫画名称...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= 首屏 Hero ================= -->
+    <section class="hero">
+        <div class="container">
+            <h1>99漫画 - 海量高清漫画在线观看平台</h1>
+            <p>汇集日漫、国漫、韩漫等各类热门作品，每日更新，流畅阅读体验。无论您是资深漫迷还是新入坑的读者，都能在这里找到心仪的故事。</p>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary">开始阅读</a>
+                <a href="#" class="btn btn-outline">浏览排行榜</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 核心分类卡片区 ================= -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">漫画分类推荐</h2>
+            <p class="section-subtitle">丰富的分类助您快速定位喜爱的作品类型</p>
+            <div class="category-grid">
+                <article class="category-card">
+                    <div class="card-icon">🗾</div>
+                    <h3>日漫</h3>
+                    <p>经典热血、治愈日常、奇幻冒险，日本漫画应有尽有。</p>
+                </article>
+                <article class="category-card">
+                    <div class="card-icon">🐉</div>
+                    <h3>国漫</h3>
+                    <p>仙侠玄幻、都市异能、古风恋爱，感受国漫崛起的力量。</p>
+                </article>
+                <article class="category-card">
+                    <div class="card-icon">💖</div>
+                    <h3>韩漫</h3>
+                    <p>唯美画风、剧情紧凑，韩漫独特的彩漫魅力不容错过。</p>
+                </article>
+                <article class="category-card">
+                    <div class="card-icon">🔥</div>
+                    <h3>热血</h3>
+                    <p>燃向战斗、友情羁绊，让人热血沸腾的作品集合。</p>
+                </article>
+                <article class="category-card">
+                    <div class="card-icon">🌙</div>
+                    <h3>恋爱</h3>
+                    <p>甜蜜日常、虐心纠葛，各种恋爱故事满足你的少女心。</p>
+                </article>
+                <article class="category-card">
+                    <div class="card-icon">🔮</div>
+                    <h3>奇幻</h3>
+                    <p>魔法世界、异界大陆，想象力无边的奇幻之旅。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 热门作品展示区 ================= -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">本周热门作品</h2>
+            <p class="section-subtitle">根据读者喜爱程度整理，实时更新</p>
+            <div class="manga-grid">
+                <article class="manga-item">
+                    <div class="manga-cover">海</div>
+                    <div class="manga-info">
+                        <h3>海贼王</h3>
+                        <span class="tag">热血</span>
+                        <div class="status">连载中</div>
+                    </div>
+                </article>
+                <article class="manga-item">
+                    <div class="manga-cover">咒</div>
+                    <div class="manga-info">
+                        <h3>咒术回战</h3>
+                        <span class="tag">奇幻</span>
+                        <div class="status">连载中</div>
+                    </div>
+                </article>
+                <article class="manga-item">
+                    <div class="manga-cover">斗</div>
+                    <div class="manga-info">
+                        <h3>斗破苍穹</h3>
+                        <span class="tag">国漫</span>
+                        <div class="status">已完结</div>
+                    </div>
+                </article>
+                <article class="manga-item">
+                    <div class="manga-cover">进</div>
+                    <div class="manga-info">
+                        <h3>进击的巨人</h3>
+                        <span class="tag">神作</span>
+                        <div class="status">已完结</div>
+                    </div>
+                </article>
+                <article class="manga-item">
+                    <div class="manga-cover">鬼</div>
+                    <div class="manga-info">
+                        <h3>鬼灭之刃</h3>
+                        <span class="tag">热血</span>
+                        <div class="status">已完结</div>
+                    </div>
+                </article>
+                <article class="manga-item">
+                    <div class="manga-cover">仙</div>
+                    <div class="manga-info">
+                        <h3>仙逆</h3>
+                        <span class="tag">国漫</span>
+                        <div class="status">连载中</div>
+                    </div>
+                </article>
+                <article class="manga-item">
+                    <div class="manga-cover">骨</div>
+                    <div class="manga-info">
+                        <h3>骷髅13</h3>
+                        <span class="tag">经典</span>
+                        <div class="status">连载中</div>
+                    </div>
+                </article>
+                <article class="manga-item">
+                    <div class="manga-cover">龙</div>
+                    <div class="manga-info">
+                        <h3>龙珠</h3>
+                        <span class="tag">经典</span>
+                        <div class="status">已完结</div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 阅读指南步骤区 ================= -->
+    <section class="guide-section">
+        <div class="container">
+            <h2 class="section-title">99漫画阅读指南</h2>
+            <p class="section-subtitle">从未知到精通，四步开启您的漫画之旅</p>
+            <div class="steps-grid">
+                <article class="step-item">
+                    <span class="step-number">01</span>
+                    <h3>注册 / 登录账号</h3>
+                    <p>使用手机号或邮箱快速注册，登录后即可同步您的阅读历史、收藏列表与评论互动，多设备无缝衔接。</p>
+                </article>
+                <article class="step-item">
+                    <span class="step-number">02</span>
+                    <h3>搜索或浏览分类</h3>
+                    <p>通过顶部搜索框直接输入漫画名，或按分类、标签、排行榜浏览。平台每半小时更新索引，确保最新作品及时呈现。</p>
+                </article>
+                <article class="step-item">
+                    <span class="step-number">03</span>
+                    <h3>进入阅读页面</h3>
+                    <p>点击封面或标题进入详情页，可查看简介、章节列表、读者评分。选择章节后进入高清阅读模式，支持上下滚动或左右翻页。</p>
+                </article>
+                <article class="step-item">
+                    <span class="step-number">04</span>
+                    <h3>收藏与互动</h3>
+                    <p>点击“收藏”按钮加入书架，后续更新自动提醒。在评论区与同好交流心得，或给作品投出您的推荐票。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 平台优势 ================= -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">为什么选择99漫画？</h2>
+            <p class="section-subtitle">用心打造每一个阅读细节</p>
+            <div class="advantage-grid">
+                <div class="advantage-box">
+                    <div class="icon">📱</div>
+                    <h3>全端适配</h3>
+                    <p>完美支持手机、平板、电脑浏览器访问，响应式布局让阅读随时随地。</p>
+                </div>
+                <div class="advantage-box">
+                    <div class="icon">🚀</div>
+                    <h3>极速加载</h3>
+                    <p>图片多节点CDN加速，章节预加载技术，翻页无需等待。</p>
+                </div>
+                <div class="advantage-box">
+                    <div class="icon">🔞</div>
+                    <h3>内容纯净</h3>
+                    <p>严格审核机制，过滤不良内容，为不同年龄段读者提供健康阅读环境。</p>
+                </div>
+                <div class="advantage-box">
+                    <div class="icon">🔄</div>
+                    <h3>实时同步</h3>
+                    <p>与国内外多家漫画工作室合作，热门作品最快30分钟内同步更新。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 注意事项 ================= -->
+    <section class="notice-section">
+        <div class="container">
+            <h2 class="section-title">读者须知与注意事项</h2>
+            <p class="section-subtitle">为了更好的阅读体验，请了解以下内容</p>
+            <ul class="notice-list">
+                <li><strong>版权声明：</strong>99漫画尊重知识产权，所有漫画内容均来自正版授权或作者投稿。若发现侵权内容，请通过官方渠道联系我们，我们将在48小时内处理。</li>
+                <li><strong>账号安全：</strong>请勿将账号密码透露给他人。平台不会以任何理由向您索要验证码或密码，谨防诈骗。</li>
+                <li><strong>阅读环境：</strong>建议在Wi-Fi环境下加载高清图片，移动数据用户可在设置中调整图片质量以节省流量。</li>
+                <li><strong>更新频率：</strong>不同漫画的更新周期不同，部分作品可能因作者休刊或版权调整而暂时停更，请关注章节页的公告说明。</li>
+                <li><strong>社区规范：</strong>评论区请保持友善交流，禁止发布广告、人身攻击或剧透内容，违者将被限制互动功能。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ================= FAQ 常见问题 ================= -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">常见问题解答</h2>
+            <p class="section-subtitle">我们整理了读者最关心的问题，希望能帮到您</p>
+            <div class="faq-list">
+                <article class="faq-item">
+                    <h3>Q：99漫画需要付费吗？</h3>
+                    <p>A：平台基础阅读完全免费。部分漫画的抢先看章节或专属内容可能需要使用虚拟币或开通会员，但每日签到和任务可以免费获取虚拟币。</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Q：如何举报不良内容或错误章节？</h3>
+                    <p>A：在漫画详情页或阅读页底部找到“举报”按钮，选择问题类型并提交说明。我们的审核团队会在24小时内核查处理，并给予反馈。</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Q：漫画阅读记录会同步吗？</h3>
+                    <p>A：只要您使用同一账号登录，阅读记录、书签和收藏都会实时同步至云端，更换设备也不受影响。</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Q：为什么部分漫画显示“已下架”？</h3>
+                    <p>A：通常是因为版权到期、作者要求或内容调整。下架作品无法继续阅读，但您的收藏列表中会保留名称，若未来重新上架会收到通知。</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Q：如何联系客服？</h3>
+                    <p>A：您可以通过页脚“联系我们”提交工单，或者发送邮件至 support@99comic.example（示例邮箱）。客服在线时间为每日9:00-21:00。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 相关推荐主题 ================= -->
+    <section class="related-section">
+        <div class="container">
+            <h2 class="section-title">相关阅读主题</h2>
+            <p class="section-subtitle">拓展您的漫画视野</p>
+            <div class="related-tags">
+                <a href="#">热血漫画推荐</a>
+                <a href="#">恋爱漫画排行</a>
+                <a href="#">国漫崛起之路</a>
+                <a href="#">韩漫精选佳作</a>
+                <a href="#">经典日漫回顾</a>
+                <a href="#">漫画改编动画</a>
+                <a href="#">冷门宝藏漫画</a>
+                <a href="#">完结漫画大全</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 页脚 ================= -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>99漫画</h3>
+                    <p>致力于为全球华人读者提供最优质、最便捷的在线漫画阅读服务。让每一个好故事都不被埋没。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="#">漫画分类</a></li>
+                        <li><a href="#">排行榜</a></li>
+                        <li><a href="#">最新更新</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>帮助支持</h4>
+                    <ul>
+                        <li><a href="#">阅读指南</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">版权投诉</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 99漫画 保留所有权利。本站所有漫画内容版权归原作者或版权方所有。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
