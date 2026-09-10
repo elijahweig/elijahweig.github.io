@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>的撒旦-深渊文化与暗黑系作品爱好者指南</title>
+    <meta name="description" content="的撒旦，一个承载着文化隐喻与暗黑美学的关键词。本站深度解析其在不同文化语境中的含义，探讨暗黑系影视、游戏、文学中的撒旦形象，为神秘文化爱好者提供一份可靠的参考指南。">
+    <meta name="keywords" content="的撒旦,撒旦文化,暗黑系作品,恶魔学,神秘学,反英雄,暗黑美学,堕落天使,路西法,地狱文化">
+    <style>
+        /* ===== 全局重置与基础 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'PingFang SC', 'Microsoft YaHei', serif;
+            background-color: #0d0b10;
+            color: #d9d2d0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a {
+            color: #b08d5c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #d9b382;
+        }
+        ul {
+            list-style: none;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ===== 布局容器 ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== 页眉 ===== */
+        .site-header {
+            background: #050407;
+            border-bottom: 1px solid #2a1f1a;
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .site-header .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+        .logo-mark {
+            width: 40px;
+            height: 40px;
+            margin-right: 12px;
+            background: radial-gradient(circle, #3d2a1c, #1a120c);
+            border: 1px solid #6b4a2f;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #a97c50;
+        }
+        .site-name {
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            font-weight: 400;
+            color: #c9b39a;
+            text-transform: uppercase;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 24px;
+        }
+        .main-nav a {
+            font-size: 1rem;
+            padding: 6px 0;
+            border-bottom: 1px solid transparent;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #b08d5c;
+        }
+
+        /* ===== 首屏 Hero ===== */
+        .hero {
+            background: linear-gradient(145deg, #0f0c11 0%, #1c1418 50%, #0d0a0c 100%);
+            padding: 100px 0 80px;
+            position: relative;
+            text-align: center;
+            border-bottom: 1px solid #2e2019;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(120, 60, 30, 0.15) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 70%, rgba(80, 40, 80, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            letter-spacing: 4px;
+            font-weight: 300;
+            color: #cbb59a;
+            margin-bottom: 16px;
+            text-shadow: 0 0 20px rgba(140, 90, 40, 0.2);
+        }
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: #8d7a6a;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        .hero .intro-text {
+            max-width: 700px;
+            margin: 0 auto 36px;
+            color: #a89a8f;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 32px;
+            border: 1px solid #b08d5c;
+            background: transparent;
+            color: #cbb59a;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-family: inherit;
+        }
+        .btn:hover {
+            background: #b08d5c;
+            color: #0d0b10;
+        }
+        .btn-outline {
+            border-color: #5a4a3a;
+            color: #9a8a7a;
+        }
+        .btn-outline:hover {
+            background: #5a4a3a;
+            color: #0d0b10;
+        }
+
+        /* ===== 概念释义 Section ===== */
+        .section {
+            padding: 80px 0;
+        }
+        .section-dark {
+            background: #0f0c0e;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-tag {
+            display: inline-block;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #b08d5c;
+            border: 1px solid #3a2c1e;
+            padding: 6px 16px;
+            margin-bottom: 16px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: #d4c3b0;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .section-header p {
+            color: #8a7a6e;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .meaning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 24px;
+        }
+        .meaning-card {
+            background: #171218;
+            border: 1px solid #2a1f1a;
+            padding: 32px 24px;
+            transition: border-color 0.3s ease;
+        }
+        .meaning-card:hover {
+            border-color: #6b4a2f;
+        }
+        .meaning-card .icon {
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+        }
+        .meaning-card h3 {
+            color: #c9b39a;
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        .meaning-card p {
+            color: #9a8d80;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ===== 暗黑作品推荐 ===== */
+        .works-section {
+            background: #0d0a0c;
+        }
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
+        }
+        .work-card {
+            background: #141014;
+            border: 1px solid #211a15;
+            padding: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .work-card:hover {
+            transform: translateY(-4px);
+            border-color: #5a4530;
+        }
+        .work-card .work-category {
+            font-size: 0.8rem;
+            color: #b08d5c;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .work-card h3 {
+            font-size: 1.2rem;
+            color: #d4c3b0;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+        .work-card p {
+            font-size: 0.9rem;
+            color: #8a7a6e;
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
+        .work-card .link-more {
+            font-size: 0.9rem;
+            border-bottom: 1px dotted #5a4530;
+            padding-bottom: 2px;
+        }
+
+        /* ===== 文化专题 ===== */
+        .topic-section {
+            background: #100d10;
+        }
+        .topic-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .topic-content h3 {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #cbb59a;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .topic-content p {
+            color: #9a8d80;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+        .topic-content blockquote {
+            border-left: 3px solid #b08d5c;
+            padding-left: 20px;
+            color: #b8a99a;
+            font-style: italic;
+            margin: 24px 0;
+            background: #171218;
+            padding: 16px 20px;
+        }
+        .topic-visual {
+            background: linear-gradient(135deg, #1e1513, #0d0a0c);
+            border: 1px solid #2a1f1a;
+            padding: 40px;
+            text-align: center;
+            font-size: 5rem;
+            color: #3d2a1c;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .topic-visual span {
+            color: #6b4a2f;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            font-weight: 300;
+        }
+
+        /* ===== 常见问题 ===== */
+        .faq-section {
+            background: #0f0c0e;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            border-bottom: 1px solid #211a15;
+            padding: 20px 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-size: 1.15rem;
+            color: #c9b39a;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-question .arrow {
+            color: #6b4a2f;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .arrow {
+            transform: rotate(45deg);
+        }
+        .faq-answer {
+            color: #8a7a6e;
+            line-height: 1.8;
+            display: none;
+            padding-top: 8px;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* ===== 页脚 ===== */
+        .site-footer {
+            background: #050407;
+            border-top: 1px solid #1a120c;
+            padding: 48px 0 24px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 32px;
+        }
+        .footer-brand h3 {
+            color: #8a7a6e;
+            font-weight: 300;
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+        .footer-brand p {
+            color: #5a4a3a;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 48px;
+        }
+        .footer-links h4 {
+            color: #6b5a4a;
+            font-weight: 400;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        .footer-links a {
+            color: #5a4a3a;
+            font-size: 0.9rem;
+        }
+        .footer-links a:hover {
+            color: #b08d5c;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid #141014;
+            color: #3d2a1c;
+            font-size: 0.85rem;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 60px 0 50px;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            .site-header .container {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .main-nav ul {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .topic-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .works-grid {
+                grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            }
+            .section {
+                padding: 50px 0;
+            }
+            .footer-content {
+                flex-direction: column;
+            }
+            .footer-links {
+                flex-wrap: wrap;
+                gap: 24px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            .meaning-grid {
+                grid-template-columns: 1fr;
+            }
+            .works-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 页眉 -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo-area">
+                <div class="logo-mark">◈</div>
+                <span class="site-name">的撒旦</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#meaning">概念释义</a></li>
+                    <li><a href="#culture">文化专题</a></li>
+                    <li><a href="#works">作品推荐</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 首屏 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>的撒旦</h1>
+                <p class="subtitle">深渊的回响 · 暗黑美学的符号探源</p>
+                <p class="intro-text">
+                    “的撒旦”并非一个简单的指代，它承载着数千年来人类对于对立面、诱惑、自由意志与黑暗本质的复杂想象。
+                    从古老的宗教文本到当代影视与游戏，这一意象始终在文化边缘闪耀着魅惑而危险的光芒。
+                    本站旨在为你梳理其文化脉络，并推荐值得关注的暗黑系作品。
+                </p>
+                <div class="hero-actions">
+                    <a href="#meaning" class="btn">开始探索</a>
+                    <a href="#works" class="btn btn-outline">浏览作品</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 概念释义 -->
+    <section class="section section-dark" id="meaning">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Symbolism</span>
+                <h2>“的撒旦”的多重语义</h2>
+                <p>在不同的文化语境中，这个词指向截然不同的概念。理解这些差异，是解读相关作品的基础。</p>
+            </div>
+            <div class="meaning-grid">
+                <div class="meaning-card">
+                    <div class="icon">⚖️</div>
+                    <h3>宗教文本中的“敌手”</h3>
+                    <p>在希伯来语传统中，“撒旦”最初意为“控告者”或“敌对者”，是神之庭中的角色，负责试探人的信心。它并非从一开始就是“恶魔”的代名词，而是神意体系中的一部分。</p>
+                </div>
+                <div class="meaning-card">
+                    <div class="icon">🌒</div>
+                    <h3>堕落天使的传说</h3>
+                    <p>随着后世文学与神学的发展，撒旦逐渐与路西法（Lucifer）的形象融合，被描绘为因骄傲而堕落的天使。这一叙事在弥尔顿的《失乐园》中达到文学巅峰，成为西方文化中“反叛者”的原型。</p>
+                </div>
+                <div class="meaning-card">
+                    <div class="icon">🎭</div>
+                    <h3>现代文艺中的反英雄</h3>
+                    <p>在当代影视、动漫和游戏中，撒旦或受其启发的角色常常被赋予复杂性。他们或是对抗僵化秩序的符号，或是人性中“非理性”与“欲望”的具象化投射，成为极具魅力的叙事核心。</p>
+                </div>
+                <div class="meaning-card">
+                    <div class="icon">🔮</div>
+                    <h3>神秘学与流行文化</h3>
+                    <p>在神秘学体系及现代流行文化中，这一符号被不断挪用与重构。从音乐到时尚，它常作为一种反叛、非主流或哥特美学的标识出现，其原始宗教意义已被大大稀释。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化专题 -->
+    <section class="section topic-section" id="culture">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Perspective</span>
+                <h2>专题：作为文化镜像的“的撒旦”</h2>
+            </div>
+            <div class="topic-layout">
+                <div class="topic-content">
+                    <h3>为何我们总被“黑暗”吸引？</h3>
+                    <p>对“的撒旦”及其衍生意象的兴趣，往往并非对“恶”的崇拜，而是对人类自身复杂性的一种探索。它允许我们在安全的叙事距离内，审视那些被社会规范压抑的欲望、愤怒与质疑。</p>
+                    <p>在文学与影像中，这一角色常被用来探讨深刻的哲学命题：自由意志与宿命的边界、秩序与混沌的辩证、以及“恶”是否可能是一种被误解的“善”。</p>
+                    <blockquote>
+                        “认识你自己的欲望，便是认识深渊的第一步。而凝视深渊的人，深渊也在凝视你。” —— 这或许是对该主题最精炼的注脚。
+                    </blockquote>
+                    <p>因此，理解“的撒旦”，并非为了宣扬消极，而是为了更清醒地认知文化符号背后的历史、心理与美学动力。</p>
+                </div>
+                <div class="topic-visual">
+                    <span>暗 影 之 镜</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品推荐 -->
+    <section class="section works-section" id="works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Archive</span>
+                <h2>暗黑系作品推荐清单</h2>
+                <p>以下作品均在不同程度上对“撒旦”原型或暗黑美学进行了富有深度的演绎，值得爱好者关注。</p>
+            </div>
+            <div class="works-grid">
+                <div class="work-card">
+                    <div class="work-category">文学</div>
+                    <h3>《失乐园》</h3>
+                    <p>约翰·弥尔顿的史诗。它重新定义了西方文化中的撒旦形象，使其成为一个充满悲壮感与反叛精神的文学角色。必读经典。</p>
+                    <a href="#" class="link-more">深入了解</a>
+                </div>
+                <div class="work-card">
+                    <div class="work-category">影视</div>
+                    <h3>《康斯坦丁》</h3>
+                    <p>电影中对地狱与天使/恶魔的设定极具视觉冲击力。基努·里维斯饰演的康斯坦丁游走于天堂与地狱之间，影片中的“撒旦”形象令人印象深刻。</p>
+                    <a href="#" class="link-more">深入了解</a>
+                </div>
+                <div class="work-card">
+                    <div class="work-category">游戏</div>
+                    <h3>《暗黑破坏神》系列</h3>
+                    <p>游戏中的“三魔神”设定深受撒旦神话影响。其黑暗哥特的视觉风格，以及对“庇护所”世界命运的探讨，使其成为暗黑系游戏的标杆。</p>
+                    <a href="#" class="link-more">深入了解</a>
+                </div>
+                <div class="work-card">
+                    <div class="work-category">动漫</div>
+                    <h3>《恶魔人 Crybaby》</h3>
+                    <p>汤浅政明执导的这部作品，将恶魔与人类的本性探讨推向了极致。它并非简单正邪对立，而是充满绝望与希望的挣扎。风格极为强烈。</p>
+                    <a href="#" class="link-more">深入了解</a>
+                </div>
+                <div class="work-card">
+                    <div class="work-category">音乐</div>
+                    <h3>Dark Ambient / Black Metal</h3>
+                    <p>在音乐领域，尤其是 Dark Ambient 与部分 Black Metal 流派中，撒旦符号被大量用作反宗教、反主流的表达工具。其氛围营造往往极具沉浸感。</p>
+                    <a href="#" class="link-more">深入了解</a>
+                </div>
+                <div class="work-card">
+                    <div class="work-category">剧集</div>
+                    <h3>《路西法》</h3>
+                    <p>该剧将路西法设定为厌倦地狱、来到洛杉矶开酒吧的“堕落者”。它以轻松甚至喜剧的方式解构了传统神话，探讨了救赎与人性。</p>
+                    <a href="#" class="link-more">深入了解</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 FAQ -->
+    <section class="section faq-section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2>关于“的撒旦”的常见疑问</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <div class="faq-question">“的撒旦”和“撒旦”有区别吗？<span class="arrow">+</span></div>
+                    <div class="faq-answer">在中文语境中，“的撒旦”通常只是对“撒旦”（Satan）一词的强调或口语化表述，其核心含义与“撒旦”一致。本站使用“的撒旦”作为主关键词，旨在聚焦于这一文化符号本身及其衍生讨论。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">撒旦是“恶”的化身吗？<span class="arrow">+</span></div>
+                    <div class="faq-answer">这取决于文化视角。在正统宗教视角中，它常被视为诱惑与堕落的源头。但在文学和艺术中，它更多被塑造为一种复杂的悲剧性角色，甚至有时代表对僵化权威的反抗。因此，不能简单以“善恶”二元论来定义。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">为什么现代作品喜欢改编撒旦形象？<span class="arrow">+</span></div>
+                    <div class="faq-answer">因为这一形象具有极强的叙事张力。它天然携带“堕落”“反叛”“诱惑”“自由”等母题，非常适合探讨现代社会中个体与规则、欲望与道德的冲突。通过改编，创作者能表达对人性更深层的理解。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">接触这类暗黑文化会有不良影响吗？<span class="arrow">+</span></div>
+                    <div class="faq-answer">作为一种文化现象和艺术表达，理性地了解和欣赏暗黑美学有助于拓宽视野，理解人类文化的多样性。关键在于保持清醒的批判性思维，将虚构与现实区分开，并尊重不同的信仰与价值观。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>的撒旦 · 文化观察站</h3>
+                    <p>一个专注于暗黑系文化、符号学与相关作品讨论的独立信息角落。我们以严谨但不失温度的态度，解读深渊中的回响。</p>
+                </div>
+                <div class="footer-links">
+                    <div>
+                        <h4>栏目</h4>
+                        <ul>
+                            <li><a href="#meaning">概念溯源</a></li>
+                            <li><a href="#culture">文化专题</a></li>
+                            <li><a href="#works">作品库</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>延伸阅读</h4>
+                        <ul>
+                            <li><a href="#">恶魔学入门</a></li>
+                            <li><a href="#">哥特美学简史</a></li>
+                            <li><a href="#">宗教符号解读</a></li>
+                            <li><a href="#">暗黑系游戏盘点</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2024 的撒旦文化观察站 · 本站内容仅供文化研究及爱好者参考 · 请理性看待虚构与信仰</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 简单交互脚本 -->
+    <script>
+        // FAQ 交互
+        document.querySelectorAll('.faq-question').forEach(function(q) {
+            q.addEventListener('click', function() {
+                var item = this.parentElement;
+                var wasActive = item.classList.contains('active');
+                // 关闭所有
+                document.querySelectorAll('.faq-item').forEach(function(i) {
+                    i.classList.remove('active');
+                });
+                // 若之前未激活，则打开当前
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</body>
+                                                                                                                                      </html>
